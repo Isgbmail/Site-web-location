@@ -1,3 +1,79 @@
+
+
+aujourd’hui 21:50
+
+Code collé.html
+Fichier
+https://jolly-cheesecake-e1c957.netlify.app/
+
+
+Oui, j’ai vérifié ton lien Google Maps. Il correspond à une position à 31.6295547, -7.9953423, à Marrakech. 
+
+Pour ton site, c’est intéressant : je peux utiliser cette localisation exacte pour remplacer le faux bloc « emplacement » actuel par un vrai bouton :
+
+📍 Voir notre emplacement sur Google Maps →
+
+Google recommande justement les Google Maps URLs pour ouvrir une localisation ou obtenir un itinéraire, sans nécessiter de clé API pour un simple lien. 
+
+Je te conseille aussi d'ajouter « Itinéraire depuis l'aéroport » et « Voir sur Google Maps », surtout pour les clients étrangers.
+
+
+Utilise cette localisation exacte pour remplacer le faux bloc emplacement par un vrai bouton
+
+Oui. Le lien correspond à la localisation 31.6295547, -7.9953423 à Marrakech. 
+
+Je vais remplacer le faux bloc par un vrai bouton Google Maps utilisant directement ton lien, tout en gardant l'affichage mobile propre :
+
+<a
+  href="https://maps.app.goo.gl/BUMAi8RemF7ihQmP6"
+  target="_blank"
+  rel="noopener noreferrer"
+  class="map-button"
+>
+  📍 Voir notre emplacement sur Google Maps →
+</a>
+Et dans le CSS :
+
+.map-button{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  min-height:52px;
+  margin-top:20px;
+  padding:14px 18px;
+  border-radius:13px;
+  background:#1c5f8c;
+  color:white;
+  text-decoration:none;
+  font-weight:600;
+  text-align:center;
+  transition:.2s ease;
+}
+
+.map-button:hover{
+  background:#134667;
+  transform:translateY(-1px);
+}
+
+@media(max-width:600px){
+  .map-button{
+    width:100%;
+    min-height:54px;
+    font-size:14px;
+  }
+}
+Je peux aussi te renvoyer le fichier HTML complet mis à jour, avec ce bouton intégré à la place du bloc d'image « emplacement ».
+
+
+Renvoyez-moi le fichier HTML complet mis à jour avec ce bouton intégré
+
+C’est fait. J’ai intégré ton lien Google Maps exact dans le bloc emplacement, avec un bouton responsive qui fonctionne aussi très bien sur mobile.
+
+Télécharger le fichier HTML complet mis à jour
+
+Le bouton ouvre directement ta localisation Google Maps dans un nouvel onglet. 
+ 
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -450,19 +526,44 @@ header{
   min-height:280px;
   border-radius:18px;
   background:
-    linear-gradient(rgba(255,255,255,.2),rgba(255,255,255,.2)),
+    linear-gradient(rgba(255,255,255,.18),rgba(255,255,255,.18)),
     url("https://images.unsplash.com/photo-1597212618440-806262de4f6b?auto=format&fit=crop&w=1000&q=80")
     center/cover;
   display:flex;
-  align-items:flex-end;
+  flex-direction:column;
+  align-items:stretch;
+  justify-content:flex-end;
+  gap:10px;
   padding:17px;
 }
 
 .map-label{
+  align-self:flex-start;
   background:white;
   padding:11px 14px;
   border-radius:12px;
   font-weight:600;
+}
+
+.map-button{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  min-height:52px;
+  padding:14px 18px;
+  border-radius:13px;
+  background:var(--blue);
+  color:white;
+  text-decoration:none;
+  font-weight:600;
+  text-align:center;
+  box-shadow:0 8px 20px rgba(0,0,0,.16);
+  transition:.2s ease;
+}
+
+.map-button:hover{
+  background:var(--blue-dark);
+  transform:translateY(-1px);
 }
 
 /* TRUST */
@@ -868,6 +969,13 @@ input:focus{
 
   .map-placeholder{
     min-height:220px;
+    padding:12px;
+  }
+
+  .map-button{
+    width:100%;
+    min-height:54px;
+    font-size:14px;
   }
 
   .trust-grid{
@@ -1224,6 +1332,15 @@ input:focus{
         <div class="map-label">
           📍 Médina de Marrakech
         </div>
+        <a
+          class="map-button"
+          href="https://maps.app.goo.gl/BUMAi8RemF7ihQmP6"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Voir l'emplacement exact sur Google Maps"
+        >
+          📍 Voir l'emplacement exact sur Google Maps →
+        </a>
       </div>
 
     </div>
@@ -1521,3 +1638,8 @@ document.getElementById("checkin").addEventListener("change",function(){
 
 </body>
 </html>
+
+Dar_Koutoubia_Mobile_First_GoogleMaps.html
+HTML
+
+
