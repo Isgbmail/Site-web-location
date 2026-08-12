@@ -24,7 +24,7 @@
   --text:#2b2118;
   --muted:#6b5d4b;
   --border:rgba(43,33,24,.12);
-  --shadow:0 16px 40px rgba(43,33,24,.10);
+  --shadow:0 20px 45px -12px rgba(43,33,24,.16);
   --radius:22px;
 }
 
@@ -34,62 +34,36 @@ html{scroll-behavior:smooth}
 
 body{
   font-family:"Work Sans",sans-serif;
-  background:var(--bg);
+  background-color:var(--bg);
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='84' height='84' viewBox='0 0 84 84'%3E%3Cg fill='none' stroke='%231c5f8c' stroke-width='1' opacity='0.10'%3E%3Cpath d='M42 2 L82 42 L42 82 L2 42 Z'/%3E%3Cpath d='M42 22 L62 42 L42 62 L22 42 Z'/%3E%3C/g%3E%3C/svg%3E");
+  background-repeat:repeat;
+  background-size:84px;
   color:var(--text);
   line-height:1.5;
   overflow-x:hidden;
   -webkit-font-smoothing:antialiased;
 }
 
-img{
-  display:block;
-  max-width:100%;
-}
-
+img{display:block;max-width:100%}
 button,input,select{font:inherit}
-
 button,a{touch-action:manipulation}
-
 a{color:inherit}
 
-.container{
-  width:min(1180px,calc(100% - 40px));
-  margin-inline:auto;
-}
+.container{width:min(1180px,calc(100% - 40px));margin-inline:auto}
 
-/* HEADER */
 header{
-  position:sticky;
-  top:0;
-  z-index:100;
+  position:sticky;top:0;z-index:100;
   background:rgba(255,248,239,.94);
   backdrop-filter:blur(14px);
   border-bottom:1px solid var(--border);
 }
 
-.nav{
-  min-height:72px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:18px;
-}
+.nav{min-height:72px;display:flex;align-items:center;justify-content:space-between;gap:18px}
 
-.logo{
-  font-family:"Fraunces",serif;
-  font-size:25px;
-  font-weight:600;
-  text-decoration:none;
-  white-space:nowrap;
-}
-
+.logo{font-family:"Fraunces",serif;font-size:25px;font-weight:600;text-decoration:none;white-space:nowrap}
 .logo span{color:var(--orange)}
 
-.nav-right{
-  display:flex;
-  align-items:center;
-  gap:12px;
-}
+.nav-right{display:flex;align-items:center;gap:12px}
 
 .language{
   border:1px solid var(--border);
@@ -101,18 +75,13 @@ header{
 }
 
 .nav-cta{
-  background:var(--blue);
-  color:var(--white);
-  text-decoration:none;
-  padding:11px 17px;
-  border-radius:999px;
-  font-size:14px;
-  font-weight:600;
+  background:var(--blue);color:var(--white);text-decoration:none;
+  padding:11px 17px;border-radius:999px;font-size:14px;font-weight:600;
 }
 
-/* HERO */
 .hero{
-  padding:clamp(38px,7vw,82px) 0 clamp(55px,8vw,90px);
+  padding:clamp(38px,7vw,82px) 0 clamp(60px,9vw,100px);
+  border-bottom:1px solid var(--border);
 }
 
 .hero-grid{
@@ -122,905 +91,264 @@ header{
   align-items:center;
 }
 
-.eyebrow{
-  color:var(--blue);
-  font-size:12px;
-  font-weight:600;
-  letter-spacing:.13em;
-  text-transform:uppercase;
-}
+.eyebrow{color:var(--blue);font-size:12px;font-weight:600;letter-spacing:.13em;text-transform:uppercase}
 
 .hero h1{
   font-family:"Fraunces",serif;
   font-size:clamp(40px,5.3vw,64px);
-  line-height:1.04;
-  letter-spacing:-.025em;
-  margin:18px 0 22px;
+  line-height:1.04;letter-spacing:-.025em;margin:18px 0 22px;
 }
+.hero h1 span{color:var(--orange)}
 
-.hero h1 span{
-  color:var(--orange);
-}
+.hero-copy{max-width:620px;font-size:clamp(16px,1.6vw,18px);color:#5b5042}
 
-.hero-copy{
-  max-width:620px;
-  font-size:clamp(16px,1.6vw,18px);
-  color:#5b5042;
-}
-
-.badges{
-  display:flex;
-  flex-wrap:wrap;
-  gap:9px;
-  margin:25px 0;
-}
-
+.badges{display:flex;flex-wrap:wrap;gap:9px;margin:25px 0}
 .badge{
-  background:var(--white);
-  border:1px solid var(--border);
-  padding:9px 12px;
-  border-radius:999px;
-  font-size:13px;
-  box-shadow:0 6px 18px rgba(43,33,24,.05);
+  background:var(--white);border:1px solid var(--border);padding:9px 12px;
+  border-radius:999px;font-size:13px;box-shadow:0 6px 18px rgba(43,33,24,.05);
 }
 
-.cta-row{
-  display:flex;
-  flex-wrap:wrap;
-  gap:12px;
-  margin-top:28px;
-}
+.cta-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
 
 .btn{
-  min-height:50px;
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  padding:13px 21px;
-  border-radius:999px;
-  text-decoration:none;
-  font-weight:600;
-  border:1px solid transparent;
-  cursor:pointer;
-  transition:transform .2s,background .2s;
+  min-height:50px;display:inline-flex;align-items:center;justify-content:center;
+  padding:13px 21px;border-radius:999px;text-decoration:none;font-weight:600;
+  border:1px solid transparent;cursor:pointer;transition:transform .2s,background .2s;
 }
-
 .btn:active{transform:scale(.98)}
-
-.btn-primary{
-  background:var(--blue);
-  color:var(--white);
-}
-
+.btn-primary{background:var(--blue);color:var(--white)}
 .btn-primary:hover{background:var(--blue-dark)}
+.btn-secondary{border-color:rgba(28,95,140,.35);color:var(--blue);background:transparent}
 
-.btn-secondary{
-  border-color:rgba(28,95,140,.35);
-  color:var(--blue);
-  background:transparent;
-}
-
-.hero-image-wrap{
-  position:relative;
-}
-
+.hero-image-wrap{position:relative}
 .hero-image{
-  width:100%;
-  height:min(620px,68vw);
-  min-height:430px;
-  object-fit:cover;
-  border-radius:190px 190px 22px 22px;
-  box-shadow:var(--shadow);
+  width:100%;height:min(620px,68vw);min-height:430px;object-fit:cover;
+  border-radius:190px 190px 22px 22px;box-shadow:var(--shadow);
+  background:linear-gradient(135deg,var(--blue),var(--green));
 }
-
 .hero-card{
-  position:absolute;
-  left:18px;
-  right:18px;
-  bottom:18px;
-  background:rgba(32,25,19,.78);
-  backdrop-filter:blur(10px);
-  color:white;
-  border-radius:16px;
-  padding:14px 16px;
+  position:absolute;left:18px;right:18px;bottom:18px;
+  background:rgba(32,25,19,.78);backdrop-filter:blur(10px);color:white;
+  border-radius:16px;padding:14px 16px;
 }
+.hero-card strong{font-family:"Fraunces",serif;font-size:17px;display:block}
+.hero-card span{font-size:13px;opacity:.9}
 
-.hero-card strong{
-  font-family:"Fraunces",serif;
-  font-size:17px;
-  display:block;
-}
+.section{padding:clamp(55px,7vw,80px) 0}
+.section-head{max-width:680px;margin-bottom:34px}
+.section-title{font-family:"Fraunces",serif;font-size:clamp(30px,4vw,42px);line-height:1.1;margin-top:10px}
+.section-subtitle{color:var(--muted);margin-top:10px}
 
-.hero-card span{
-  font-size:13px;
-  opacity:.9;
-}
-
-/* ZELLIGE */
-.zellige{
-  height:10px;
-  background:repeating-linear-gradient(
-    135deg,
-    var(--blue) 0 18px,
-    var(--green) 18px 36px,
-    var(--gold) 36px 54px,
-    var(--orange) 54px 72px
-  );
-}
-
-/* SECTIONS */
-.section{
-  padding:clamp(55px,7vw,80px) 0;
-}
-
-.section-head{
-  max-width:680px;
-  margin-bottom:34px;
-}
-
-.section-title{
-  font-family:"Fraunces",serif;
-  font-size:clamp(30px,4vw,42px);
-  line-height:1.1;
-  margin-top:10px;
-}
-
-.section-subtitle{
-  color:var(--muted);
-  margin-top:10px;
-}
-
-/* FEATURES */
-.features{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:16px;
-}
-
+.features{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
 .feature{
-  background:var(--white);
-  border:1px solid var(--border);
-  border-radius:var(--radius);
-  padding:23px;
-  box-shadow:0 7px 25px rgba(43,33,24,.045);
+  background:var(--white);border:1px solid var(--border);border-radius:var(--radius);
+  padding:23px;box-shadow:0 7px 25px rgba(43,33,24,.045);
+}
+.feature-icon{font-size:27px;margin-bottom:12px}
+.feature h3{font-family:"Fraunces",serif;font-size:19px;margin-bottom:7px}
+.feature p{color:var(--muted);font-size:14px}
+
+.gallery{display:grid;grid-template-columns:2fr 1fr 1fr;gap:13px}
+.gallery-item{position:relative;border-radius:18px;overflow:hidden}
+.gallery-item img{width:100%;height:220px;object-fit:cover;display:block}
+.gallery-item:first-child{grid-row:span 2}
+.gallery-item:first-child img{height:453px}
+.gallery-caption{
+  position:absolute;left:0;right:0;bottom:0;
+  background:linear-gradient(to top, rgba(20,15,10,.82), transparent);
+  color:#fff;padding:16px 14px 12px;font-family:"Fraunces",serif;font-size:15px;
 }
 
-.feature-icon{
-  font-size:27px;
-  margin-bottom:12px;
-}
-
-.feature h3{
-  font-family:"Fraunces",serif;
-  font-size:19px;
-  margin-bottom:7px;
-}
-
-.feature p{
-  color:var(--muted);
-  font-size:14px;
-}
-
-/* GALLERY */
-.gallery{
-  display:grid;
-  grid-template-columns:2fr 1fr 1fr;
-  gap:13px;
-}
-
-.gallery img{
-  width:100%;
-  height:220px;
-  object-fit:cover;
-  border-radius:18px;
-}
-
-.gallery img:first-child{
-  height:453px;
-  grid-row:span 2;
-}
-
-/* APARTMENTS */
-.apartments{
-  display:grid;
-  grid-template-columns:repeat(2,minmax(0,1fr));
-  gap:24px;
-}
-
+.apartments{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
 .card{
-  background:var(--white);
-  border:1px solid var(--border);
-  border-radius:var(--radius);
-  overflow:hidden;
-  box-shadow:var(--shadow);
+  background:var(--white);border:1px solid var(--border);border-radius:var(--radius);
+  overflow:hidden;box-shadow:var(--shadow);
 }
-
-.card-image-wrap{
-  position:relative;
-}
-
+.card-image-wrap{position:relative}
 .card-image{
-  width:100%;
-  height:290px;
-  object-fit:cover;
+  width:100%;height:290px;object-fit:cover;
+  background:linear-gradient(135deg,var(--blue),var(--green));
 }
-
 .rating{
-  position:absolute;
-  top:14px;
-  left:14px;
-  background:rgba(255,255,255,.94);
-  border-radius:999px;
-  padding:7px 11px;
-  font-size:12px;
-  font-weight:600;
+  position:absolute;top:14px;left:14px;background:rgba(255,255,255,.94);
+  border-radius:999px;padding:7px 11px;font-size:12px;font-weight:600;
 }
-
-.card-content{
-  padding:23px;
-}
-
-.card-title{
-  font-family:"Fraunces",serif;
-  font-size:24px;
-  line-height:1.15;
-}
-
-.price{
-  color:var(--green);
-  font-size:20px;
-  font-weight:700;
-  margin:11px 0 13px;
-}
-
-.specs{
-  display:flex;
-  flex-wrap:wrap;
-  gap:7px;
-  margin-bottom:15px;
-}
-
-.spec{
-  background:#f8f1df;
-  padding:7px 9px;
-  border-radius:8px;
-  font-size:12px;
-}
-
-.amenities{
-  display:flex;
-  flex-wrap:wrap;
-  gap:9px 14px;
-  margin-bottom:21px;
-}
-
-.amenity{
-  color:#5c5143;
-  font-size:13px;
-}
-
+.card-content{padding:23px}
+.card-title{font-family:"Fraunces",serif;font-size:24px;line-height:1.15}
+.price{color:var(--green);font-size:20px;font-weight:700;margin:11px 0 13px}
+.specs{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:15px}
+.spec{background:#f8f1df;padding:7px 9px;border-radius:8px;font-size:12px}
+.amenities{display:flex;flex-wrap:wrap;gap:9px 14px;margin-bottom:21px}
+.amenity{color:#5c5143;font-size:13px}
 .reserve{
-  width:100%;
-  min-height:50px;
-  border:0;
-  border-radius:13px;
-  background:var(--blue);
-  color:white;
-  font-weight:600;
-  cursor:pointer;
+  width:100%;min-height:50px;border:0;border-radius:13px;
+  background:var(--blue);color:white;font-weight:600;cursor:pointer;
 }
-
 .reserve:hover{background:var(--blue-dark)}
 
-/* LOCATION */
 .location-box{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:28px;
-  background:var(--white);
-  border-radius:var(--radius);
-  padding:28px;
-  border:1px solid var(--border);
+  display:grid;grid-template-columns:1fr 1fr;gap:28px;
+  background:var(--white);border-radius:var(--radius);padding:28px;border:1px solid var(--border);
 }
-
-.location-list{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:12px;
-  margin-top:20px;
-}
-
-.location-item{
-  background:#fbf4e6;
-  padding:13px;
-  border-radius:12px;
-}
-
-.location-item strong{
-  display:block;
-  font-size:15px;
-}
-
-.location-item span{
-  color:var(--muted);
-  font-size:12px;
-}
+.location-list{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:20px}
+.location-item{background:#fbf4e6;padding:13px;border-radius:12px}
+.location-item strong{display:block;font-size:15px}
+.location-item span{color:var(--muted);font-size:12px}
 
 .map-placeholder{
-  min-height:280px;
-  border-radius:18px;
+  min-height:280px;border-radius:18px;
   background:
-    linear-gradient(rgba(255,255,255,.18),rgba(255,255,255,.18)),
-    url("https://images.unsplash.com/photo-1597212618440-806262de4f6b?auto=format&fit=crop&w=1000&q=80")
+    linear-gradient(rgba(20,50,60,.28),rgba(20,50,60,.28)),
+    url("https://images.unsplash.com/photo-1741918265297-510c428d04c3?fm=jpg&q=70&w=1000&auto=format&fit=crop")
     center/cover;
-  display:flex;
-  flex-direction:column;
-  align-items:stretch;
-  justify-content:flex-end;
-  gap:10px;
-  padding:17px;
+  display:flex;flex-direction:column;align-items:stretch;justify-content:flex-end;gap:10px;padding:17px;
 }
-
-.map-label{
-  align-self:flex-start;
-  background:white;
-  padding:11px 14px;
-  border-radius:12px;
-  font-weight:600;
-}
-
+.map-label{align-self:flex-start;background:white;padding:11px 14px;border-radius:12px;font-weight:600}
 .map-button{
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  min-height:52px;
-  padding:14px 18px;
-  border-radius:13px;
-  background:var(--blue);
-  color:white;
-  text-decoration:none;
-  font-weight:600;
-  text-align:center;
-  box-shadow:0 8px 20px rgba(0,0,0,.16);
-  transition:.2s ease;
+  display:flex;align-items:center;justify-content:center;min-height:52px;padding:14px 18px;
+  border-radius:13px;background:var(--blue);color:white;text-decoration:none;font-weight:600;
+  text-align:center;box-shadow:0 8px 20px rgba(0,0,0,.16);transition:.2s ease;
 }
+.map-button:hover{background:var(--blue-dark);transform:translateY(-1px)}
 
-.map-button:hover{
-  background:var(--blue-dark);
-  transform:translateY(-1px);
-}
+.trust{background:var(--blue);color:white}
+.trust-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:25px}
+.trust-item h3{font-family:"Fraunces",serif;font-size:30px}
+.trust-item p{opacity:.84;font-size:14px}
 
-/* TRUST */
-.trust{
-  background:var(--blue);
-  color:white;
-}
+footer{padding:35px 0 95px;text-align:center;color:#6d614f;font-size:13px}
 
-.trust-grid{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:25px;
-}
-
-.trust-item h3{
-  font-family:"Fraunces",serif;
-  font-size:30px;
-}
-
-.trust-item p{
-  opacity:.84;
-  font-size:14px;
-}
-
-/* FOOTER */
-footer{
-  padding:35px 0 95px;
-  text-align:center;
-  color:#6d614f;
-  font-size:13px;
-}
-
-/* WHATSAPP */
 .whatsapp{
-  position:fixed;
-  right:20px;
-  bottom:20px;
-  width:58px;
-  height:58px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  border-radius:50%;
-  background:#25d366;
-  color:white;
-  text-decoration:none;
-  font-size:25px;
-  box-shadow:0 10px 30px rgba(0,0,0,.22);
-  z-index:120;
+  position:fixed;right:20px;bottom:20px;width:58px;height:58px;
+  display:flex;align-items:center;justify-content:center;border-radius:50%;
+  background:#25d366;color:white;text-decoration:none;font-size:25px;
+  box-shadow:0 10px 30px rgba(0,0,0,.22);z-index:120;
 }
 
-/* MOBILE BOTTOM BAR */
-.mobile-bar{
-  display:none;
-}
+.mobile-bar{display:none}
 
-/* MODAL */
 .modal-bg{
-  position:fixed;
-  inset:0;
-  background:rgba(0,0,0,.58);
-  display:none;
-  align-items:flex-end;
-  justify-content:center;
-  padding:0;
-  z-index:200;
+  position:fixed;inset:0;background:rgba(0,0,0,.58);display:none;
+  align-items:flex-end;justify-content:center;padding:0;z-index:200;
 }
-
 .modal-bg.open{display:flex}
-
 .modal{
-  position:relative;
-  width:min(500px,100%);
-  max-height:92vh;
-  overflow:auto;
-  background:var(--white);
-  border-radius:24px 24px 0 0;
-  padding:27px;
+  position:relative;width:min(500px,100%);max-height:92vh;overflow:auto;
+  background:var(--white);border-radius:24px 24px 0 0;padding:27px;
   box-shadow:0 -15px 50px rgba(0,0,0,.25);
 }
-
 .close{
-  position:absolute;
-  right:17px;
-  top:14px;
-  width:38px;
-  height:38px;
-  border:0;
-  border-radius:50%;
-  background:#f5efe5;
-  cursor:pointer;
-  font-size:20px;
+  position:absolute;right:17px;top:14px;width:38px;height:38px;border:0;
+  border-radius:50%;background:#f5efe5;cursor:pointer;font-size:20px;
 }
-
-.modal h2{
-  font-family:"Fraunces",serif;
-  font-size:26px;
-  padding-right:45px;
-}
-
-.modal-note{
-  color:var(--muted);
-  font-size:13px;
-  margin:7px 0 20px;
-}
-
-.field{
-  margin-bottom:13px;
-}
-
-.field label{
-  display:block;
-  font-size:12px;
-  font-weight:600;
-  margin-bottom:5px;
-}
-
+.modal h2{font-family:"Fraunces",serif;font-size:26px;padding-right:45px}
+.modal-note{color:var(--muted);font-size:13px;margin:7px 0 20px}
+.field{margin-bottom:13px}
+.field label{display:block;font-size:12px;font-weight:600;margin-bottom:5px}
 input{
-  width:100%;
-  min-height:48px;
-  border:1px solid #d8d0c4;
-  border-radius:11px;
-  padding:11px 13px;
-  background:#fffdf9;
+  width:100%;min-height:48px;border:1px solid #d8d0c4;border-radius:11px;
+  padding:11px 13px;background:#fffdf9;
 }
+input:focus{outline:2px solid rgba(28,95,140,.18);border-color:var(--blue)}
+.field-row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
 
-input:focus{
-  outline:2px solid rgba(28,95,140,.18);
-  border-color:var(--blue);
-}
-
-.field-row{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:10px;
-}
-
-/* TABLET */
 @media (max-width:900px){
-  .hero-grid{
-    grid-template-columns:1fr;
-  }
-
-  .hero-copy{
-    max-width:700px;
-  }
-
-  .hero-image{
-    height:520px;
-    max-width:620px;
-    margin-inline:auto;
-  }
-
-  .features{
-    grid-template-columns:1fr 1fr;
-  }
-
-  .apartments{
-    grid-template-columns:1fr;
-  }
-
-  .location-box{
-    grid-template-columns:1fr;
-  }
-
-  .trust-grid{
-    grid-template-columns:1fr 1fr;
-    gap:28px;
-  }
+  .hero-grid{grid-template-columns:1fr}
+  .hero-copy{max-width:700px}
+  .hero-image{height:520px;max-width:620px;margin-inline:auto}
+  .features{grid-template-columns:1fr 1fr}
+  .apartments{grid-template-columns:1fr}
+  .location-box{grid-template-columns:1fr}
+  .trust-grid{grid-template-columns:1fr 1fr;gap:28px}
 }
 
-/* MOBILE-FIRST OVERRIDES */
 @media (max-width:600px){
-  body{
-    padding-bottom:68px;
-  }
-
-  .container{
-    width:min(100% - 28px,1180px);
-  }
-
-  header{
-    position:sticky;
-  }
-
-  .nav{
-    min-height:62px;
-  }
-
-  .logo{
-    font-size:22px;
-  }
-
-  .nav-right{
-    gap:7px;
-  }
-
-  .nav-cta{
-    display:none;
-  }
-
-  .language{
-    padding:7px 9px;
-    font-size:12px;
-  }
-
-  .hero{
-    padding:30px 0 45px;
-  }
-
-  .hero-grid{
-    gap:28px;
-  }
-
-  .eyebrow{
-    font-size:10.5px;
-    letter-spacing:.10em;
-  }
-
-  .hero h1{
-    font-size:clamp(36px,11vw,48px);
-    margin:14px 0 17px;
-  }
-
-  .hero-copy{
-    font-size:15.5px;
-    line-height:1.6;
-  }
-
-  .badges{
-    gap:7px;
-    margin:20px 0;
-  }
-
-  .badge{
-    padding:8px 10px;
-    font-size:11.5px;
-  }
-
-  .cta-row{
-    display:grid;
-    grid-template-columns:1fr;
-    gap:9px;
-    margin-top:22px;
-  }
-
-  .btn{
-    width:100%;
-    min-height:52px;
-    padding:13px 16px;
-  }
-
-  .hero-image{
-    height:390px;
-    min-height:0;
-    border-radius:100px 100px 16px 16px;
-  }
-
-  .hero-card{
-    left:12px;
-    right:12px;
-    bottom:12px;
-    padding:11px 13px;
-  }
-
-  .hero-card strong{
-    font-size:15px;
-  }
-
-  .hero-card span{
-    font-size:11px;
-  }
-
-  .zellige{
-    height:7px;
-  }
-
-  .section{
-    padding:45px 0;
-  }
-
-  .section-head{
-    margin-bottom:25px;
-  }
-
-  .section-title{
-    font-size:31px;
-  }
-
-  .section-subtitle{
-    font-size:14px;
-  }
-
-  .features{
-    grid-template-columns:1fr;
-    gap:10px;
-  }
-
-  .feature{
-    display:grid;
-    grid-template-columns:38px 1fr;
-    column-gap:10px;
-    padding:16px;
-    border-radius:17px;
-  }
-
-  .feature-icon{
-    grid-row:span 2;
-    margin:0;
-    font-size:23px;
-  }
-
-  .feature h3{
-    font-size:17px;
-  }
-
-  .feature p{
-    font-size:13px;
-  }
-
-  .gallery{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:8px;
-  }
-
-  .gallery img,
-  .gallery img:first-child{
-    height:170px;
-    border-radius:12px;
-    grid-row:auto;
-  }
-
-  .gallery img:first-child{
-    grid-column:1 / -1;
-    height:245px;
-  }
-
-  .apartments{
-    gap:16px;
-  }
-
-  .card{
-    border-radius:19px;
-  }
-
-  .card-image{
-    height:235px;
-  }
-
-  .card-content{
-    padding:18px;
-  }
-
-  .card-title{
-    font-size:22px;
-  }
-
-  .price{
-    font-size:18px;
-    margin:9px 0 11px;
-  }
-
-  .spec{
-    font-size:11.5px;
-  }
-
-  .amenities{
-    margin-bottom:17px;
-    gap:7px 11px;
-  }
-
-  .amenity{
-    font-size:12px;
-  }
-
-  .reserve{
-    min-height:52px;
-  }
-
-  .location-box{
-    padding:16px;
-    gap:18px;
-  }
-
-  .location-list{
-    grid-template-columns:1fr 1fr;
-    gap:8px;
-    margin-top:15px;
-  }
-
-  .location-item{
-    padding:11px;
-  }
-
-  .location-item strong{
-    font-size:13px;
-  }
-
-  .location-item span{
-    font-size:11px;
-  }
-
-  .map-placeholder{
-    min-height:220px;
-    padding:12px;
-  }
-
-  .map-button{
-    width:100%;
-    min-height:54px;
-    font-size:14px;
-  }
-
-  .trust-grid{
-    grid-template-columns:1fr 1fr;
-    gap:24px 16px;
-  }
-
-  .trust-item h3{
-    font-size:25px;
-  }
-
-  .trust-item p{
-    font-size:12px;
-  }
-
-  footer{
-    padding:28px 0 20px;
-    font-size:12px;
-  }
-
-  .whatsapp{
-    display:none;
-  }
-
+  body{padding-bottom:68px}
+  .container{width:min(100% - 28px,1180px)}
+  .nav{min-height:62px}
+  .logo{font-size:22px}
+  .nav-right{gap:7px}
+  .nav-cta{display:none}
+  .language{padding:7px 9px;font-size:12px}
+  .hero{padding:30px 0 45px}
+  .hero-grid{gap:28px}
+  .eyebrow{font-size:10.5px;letter-spacing:.10em}
+  .hero h1{font-size:clamp(36px,11vw,48px);margin:14px 0 17px}
+  .hero-copy{font-size:15.5px;line-height:1.6}
+  .badges{gap:7px;margin:20px 0}
+  .badge{padding:8px 10px;font-size:11.5px}
+  .cta-row{display:grid;grid-template-columns:1fr;gap:9px;margin-top:22px}
+  .btn{width:100%;min-height:52px;padding:13px 16px}
+  .hero-image{height:390px;min-height:0;border-radius:100px 100px 16px 16px}
+  .hero-card{left:12px;right:12px;bottom:12px;padding:11px 13px}
+  .hero-card strong{font-size:15px}
+  .hero-card span{font-size:11px}
+  .section{padding:45px 0}
+  .section-head{margin-bottom:25px}
+  .section-title{font-size:31px}
+  .section-subtitle{font-size:14px}
+  .features{grid-template-columns:1fr;gap:10px}
+  .feature{display:grid;grid-template-columns:38px 1fr;column-gap:10px;padding:16px;border-radius:17px}
+  .feature-icon{grid-row:span 2;margin:0;font-size:23px}
+  .feature h3{font-size:17px}
+  .feature p{font-size:13px}
+  .gallery{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+  .gallery-item img{height:170px;border-radius:12px}
+  .gallery-item:first-child{grid-column:1 / -1;grid-row:auto}
+  .gallery-item:first-child img{height:245px}
+  .apartments{gap:16px}
+  .card{border-radius:19px}
+  .card-image{height:235px}
+  .card-content{padding:18px}
+  .card-title{font-size:22px}
+  .price{font-size:18px;margin:9px 0 11px}
+  .spec{font-size:11.5px}
+  .amenities{margin-bottom:17px;gap:7px 11px}
+  .amenity{font-size:12px}
+  .reserve{min-height:52px}
+  .location-box{padding:16px;gap:18px}
+  .location-list{grid-template-columns:1fr 1fr;gap:8px;margin-top:15px}
+  .location-item{padding:11px}
+  .location-item strong{font-size:13px}
+  .location-item span{font-size:11px}
+  .map-placeholder{min-height:220px;padding:12px}
+  .map-button{width:100%;min-height:54px;font-size:14px}
+  .trust-grid{grid-template-columns:1fr 1fr;gap:24px 16px}
+  .trust-item h3{font-size:25px}
+  .trust-item p{font-size:12px}
+  footer{padding:28px 0 20px;font-size:12px}
+  .whatsapp{display:none}
   .mobile-bar{
-    position:fixed;
-    left:0;
-    right:0;
-    bottom:0;
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:8px;
+    position:fixed;left:0;right:0;bottom:0;display:grid;grid-template-columns:1fr 1fr;gap:8px;
     padding:9px 10px calc(9px + env(safe-area-inset-bottom));
-    background:rgba(255,255,255,.96);
-    backdrop-filter:blur(12px);
-    border-top:1px solid var(--border);
-    z-index:150;
+    background:rgba(255,255,255,.96);backdrop-filter:blur(12px);
+    border-top:1px solid var(--border);z-index:150;
   }
-
   .mobile-bar a{
-    min-height:48px;
-    border-radius:12px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    text-decoration:none;
-    font-size:14px;
-    font-weight:600;
+    min-height:48px;border-radius:12px;display:flex;align-items:center;justify-content:center;
+    text-decoration:none;font-size:14px;font-weight:600;
   }
-
-  .mobile-book{
-    background:var(--blue);
-    color:white;
-  }
-
-  .mobile-whatsapp{
-    background:#25d366;
-    color:white;
-  }
-
-  .modal-bg{
-    align-items:flex-end;
-  }
-
-  .modal{
-    padding:22px 17px calc(22px + env(safe-area-inset-bottom));
-    border-radius:22px 22px 0 0;
-    max-height:94vh;
-  }
-
-  .modal h2{
-    font-size:23px;
-  }
-
-  .field-row{
-    grid-template-columns:1fr 1fr;
-  }
-
-  input{
-    min-height:50px;
-    font-size:16px; /* évite le zoom automatique iOS */
-  }
+  .mobile-book{background:var(--blue);color:white}
+  .mobile-whatsapp{background:#25d366;color:white}
+  .modal-bg{align-items:flex-end}
+  .modal{padding:22px 17px calc(22px + env(safe-area-inset-bottom));border-radius:22px 22px 0 0;max-height:94vh}
+  .modal h2{font-size:23px}
+  .field-row{grid-template-columns:1fr 1fr}
+  input{min-height:50px;font-size:16px}
 }
 
-/* VERY SMALL PHONES */
 @media (max-width:380px){
-  .container{
-    width:calc(100% - 22px);
-  }
-
-  .hero h1{
-    font-size:34px;
-  }
-
-  .hero-image{
-    height:340px;
-  }
-
-  .badge{
-    font-size:10.5px;
-  }
-
-  .location-list{
-    grid-template-columns:1fr;
-  }
-
-  .field-row{
-    grid-template-columns:1fr;
-  }
+  .container{width:calc(100% - 22px)}
+  .hero h1{font-size:34px}
+  .hero-image{height:340px}
+  .badge{font-size:10.5px}
+  .location-list{grid-template-columns:1fr}
+  .field-row{grid-template-columns:1fr}
 }
 
-/* TOUCH DEVICES */
 @media (hover:none){
-  .card:hover{
-    transform:none;
-    box-shadow:var(--shadow);
-  }
-
-  .btn:hover{
-    transform:none;
-  }
+  .card:hover{transform:none;box-shadow:var(--shadow)}
+  .btn:hover{transform:none}
 }
 </style>
 </head>
@@ -1032,16 +360,14 @@ input:focus{
     <a href="#" class="logo">Dar <span>Koutoubia</span></a>
 
     <div class="nav-right">
-      <select class="language" aria-label="Choisir la langue">
-        <option>FR</option>
-        <option>EN</option>
-        <option>ES</option>
-        <option>DE</option>
+      <select class="language" id="langSelect" aria-label="Choisir la langue" onchange="setLanguage(this.value)">
+        <option value="fr">FR</option>
+        <option value="en">EN</option>
+        <option value="es">ES</option>
+        <option value="de">DE</option>
       </select>
 
-      <a href="#apartments" class="nav-cta">
-        Voir les logements
-      </a>
+      <a href="#apartments" class="nav-cta" data-i18n="nav_cta">Voir les logements</a>
     </div>
   </div>
 </header>
@@ -1052,16 +378,14 @@ input:focus{
   <div class="container hero-grid">
 
     <div>
-      <div class="eyebrow">
-        Médina de Marrakech · à 3 min de Jemaa el-Fna
-      </div>
+      <div class="eyebrow" data-i18n="hero_eyebrow">Médina de Marrakech · à 3 min de Jemaa el-Fna</div>
 
       <h1>
-        Votre séjour au
-        <span>cœur de Marrakech.</span>
+        <span data-i18n="hero_h1_pre">Votre séjour au</span>
+        <span data-i18n="hero_h1_span">cœur de Marrakech.</span>
       </h1>
 
-      <p class="hero-copy">
+      <p class="hero-copy" data-i18n="hero_copy">
         Quatre logements au cœur de la médina, proches de la Koutoubia
         et de Jemaa el-Fna. Réservez directement auprès de nous,
         avec une communication rapide sur WhatsApp.
@@ -1069,19 +393,21 @@ input:focus{
 
       <div class="badges">
         <div class="badge">⭐ 4,55/5</div>
-        <div class="badge">189 avis</div>
-        <div class="badge">📍 3 min Jemaa el-Fna</div>
+        <div class="badge" data-i18n="badge_reviews">189 avis</div>
+        <div class="badge" data-i18n="badge_distance">📍 3 min Jemaa el-Fna</div>
       </div>
 
       <div class="cta-row">
-        <a href="#apartments" class="btn btn-primary">
+        <a href="#apartments" class="btn btn-primary" data-i18n="btn_primary">
           Vérifier les disponibilités
         </a>
 
         <a
-          href="https://wa.me/212619420460?text=Bonjour%2C%20j%27aimerais%20avoir%20des%20informations%20sur%20vos%20appartements%20%C3%A0%20Marrakech."
+          href="#"
+          id="heroWhatsapp"
           target="_blank"
           class="btn btn-secondary"
+          data-i18n="btn_secondary"
         >
           💬 Contacter sur WhatsApp
         </a>
@@ -1092,6 +418,7 @@ input:focus{
       <img
         class="hero-image"
         src="https://a0.muscache.com/im/pictures/hosting/Hosting-53142503/original/90f0fc53-1442-43f2-8ebb-850f6d90a688.jpeg?im_w=720"
+        onerror="this.onerror=null;this.removeAttribute('src');"
         alt="Terrasse avec vue sur la Koutoubia et Marrakech"
         width="720"
         height="960"
@@ -1099,22 +426,20 @@ input:focus{
 
       <div class="hero-card">
         <strong>Dar Koutoubia</strong>
-        <span>Terrasse panoramique · Vue Atlas · Médina</span>
+        <span data-i18n="hero_card_sub">Terrasse panoramique · Vue Atlas · Médina</span>
       </div>
     </div>
 
   </div>
 </section>
 
-<div class="zellige"></div>
-
 <section class="section">
   <div class="container">
 
     <div class="section-head">
-      <div class="eyebrow">Pourquoi nous choisir</div>
-      <h2 class="section-title">Réserver directement, simplement.</h2>
-      <p class="section-subtitle">
+      <div class="eyebrow" data-i18n="features_eyebrow">Pourquoi nous choisir</div>
+      <h2 class="section-title" data-i18n="features_title">Réserver directement, simplement.</h2>
+      <p class="section-subtitle" data-i18n="features_sub">
         Un contact direct avec votre hôte et une expérience pensée
         pour votre séjour à Marrakech.
       </p>
@@ -1125,32 +450,32 @@ input:focus{
       <article class="feature">
         <div class="feature-icon">💳</div>
         <div>
-          <h3>Tarif direct</h3>
-          <p>Aucun frais de plateforme ajouté à votre réservation.</p>
+          <h3 data-i18n="feature1_title">Tarif direct</h3>
+          <p data-i18n="feature1_p">Aucun frais de plateforme ajouté à votre réservation.</p>
         </div>
       </article>
 
       <article class="feature">
         <div class="feature-icon">⚡</div>
         <div>
-          <h3>Réponse rapide</h3>
-          <p>Échangez directement avec nous via WhatsApp.</p>
+          <h3 data-i18n="feature2_title">Réponse rapide</h3>
+          <p data-i18n="feature2_p">Échangez directement avec nous via WhatsApp.</p>
         </div>
       </article>
 
       <article class="feature">
         <div class="feature-icon">🔒</div>
         <div>
-          <h3>Assistance</h3>
-          <p>Nous restons disponibles pendant votre séjour.</p>
+          <h3 data-i18n="feature3_title">Assistance</h3>
+          <p data-i18n="feature3_p">Nous restons disponibles pendant votre séjour.</p>
         </div>
       </article>
 
       <article class="feature">
         <div class="feature-icon">🏠</div>
         <div>
-          <h3>Hôte local</h3>
-          <p>Profitez de conseils pour découvrir Marrakech.</p>
+          <h3 data-i18n="feature4_title">Hôte local</h3>
+          <p data-i18n="feature4_p">Profitez de conseils pour découvrir Marrakech.</p>
         </div>
       </article>
 
@@ -1162,38 +487,41 @@ input:focus{
   <div class="container">
 
     <div class="section-head">
-      <div class="eyebrow">Destination</div>
-      <h2 class="section-title">Marrakech vous attend.</h2>
-      <p class="section-subtitle">
+      <div class="eyebrow" data-i18n="gallery_eyebrow">Destination</div>
+      <h2 class="section-title" data-i18n="gallery_title">Marrakech vous attend.</h2>
+      <p class="section-subtitle" data-i18n="gallery_sub">
         Profitez de la médina, des souks, de la Koutoubia
         et de l'ambiance unique de Marrakech.
       </p>
     </div>
 
     <div class="gallery">
-      <img
-        src="https://images.unsplash.com/photo-1597212618440-806262de4f6b?auto=format&fit=crop&w=1200&q=80"
-        alt="Marrakech"
-        loading="lazy"
-        width="1200"
-        height="800"
-      >
+      <div class="gallery-item">
+        <img
+          src="https://images.unsplash.com/photo-1725303259124-9b3b899af81c?fm=jpg&q=70&w=1200&auto=format&fit=crop"
+          alt="Marché nocturne de Jemaa el-Fna, Marrakech"
+          loading="lazy" width="1200" height="800"
+        >
+        <div class="gallery-caption" data-i18n="gallery_cap1">Jemaa el-Fna, de nuit</div>
+      </div>
 
-      <img
-        src="https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=700&q=80"
-        alt="Architecture marocaine"
-        loading="lazy"
-        width="700"
-        height="500"
-      >
+      <div class="gallery-item">
+        <img
+          src="https://images.unsplash.com/photo-1741918265297-510c428d04c3?fm=jpg&q=70&w=700&auto=format&fit=crop"
+          alt="Mosquée de la Koutoubia, Marrakech"
+          loading="lazy" width="700" height="500"
+        >
+        <div class="gallery-caption">La Koutoubia</div>
+      </div>
 
-      <img
-        src="https://images.unsplash.com/photo-1518546305927-5a555bb7020d?auto=format&fit=crop&w=700&q=80"
-        alt="Marrakech"
-        loading="lazy"
-        width="700"
-        height="500"
-      >
+      <div class="gallery-item">
+        <img
+          src="https://images.unsplash.com/photo-1528499640293-fe8fba1f28c4?fm=jpg&q=70&w=700&auto=format&fit=crop"
+          alt="Scène de rue à Jemaa el-Fna, Marrakech"
+          loading="lazy" width="700" height="500"
+        >
+        <div class="gallery-caption" data-i18n="gallery_cap3">L'ambiance des souks</div>
+      </div>
     </div>
 
   </div>
@@ -1203,9 +531,9 @@ input:focus{
   <div class="container">
 
     <div class="section-head">
-      <div class="eyebrow">Nos logements</div>
-      <h2 class="section-title">Choisissez votre séjour.</h2>
-      <p class="section-subtitle">
+      <div class="eyebrow" data-i18n="apartments_eyebrow">Nos logements</div>
+      <h2 class="section-title" data-i18n="apartments_title">Choisissez votre séjour.</h2>
+      <p class="section-subtitle" data-i18n="apartments_sub">
         Des logements adaptés aux couples, familles et groupes.
       </p>
     </div>
@@ -1221,10 +549,10 @@ input:focus{
     <div class="location-box">
 
       <div>
-        <div class="eyebrow">Emplacement</div>
-        <h2 class="section-title">Au cœur de la médina.</h2>
+        <div class="eyebrow" data-i18n="location_eyebrow">Emplacement</div>
+        <h2 class="section-title" data-i18n="location_title">Au cœur de la médina.</h2>
 
-        <p class="section-subtitle">
+        <p class="section-subtitle" data-i18n="location_sub">
           Un emplacement pratique pour découvrir Marrakech
           à pied et profiter de ses principaux sites.
         </p>
@@ -1237,31 +565,29 @@ input:focus{
 
           <div class="location-item">
             <strong>Koutoubia</strong>
-            <span>À proximité</span>
+            <span data-i18n="loc_nearby">À proximité</span>
           </div>
 
           <div class="location-item">
-            <strong>Souks</strong>
-            <span>À pied</span>
+            <strong data-i18n="loc_souks">Souks</strong>
+            <span data-i18n="loc_walk">À pied</span>
           </div>
 
           <div class="location-item">
-            <strong>Médina</strong>
-            <span>Emplacement central</span>
+            <strong data-i18n="loc_medina">Médina</strong>
+            <span data-i18n="loc_central">Emplacement central</span>
           </div>
         </div>
       </div>
 
       <div class="map-placeholder">
-        <div class="map-label">
-          📍 Médina de Marrakech
-        </div>
+        <div class="map-label" data-i18n="map_label">📍 Médina de Marrakech</div>
         <a
           class="map-button"
           href="https://maps.app.goo.gl/BUMAi8RemF7ihQmP6"
           target="_blank"
           rel="noopener noreferrer"
-          aria-label="Voir l'emplacement exact sur Google Maps"
+          data-i18n="map_button"
         >
           📍 Voir l'emplacement exact sur Google Maps →
         </a>
@@ -1279,22 +605,22 @@ input:focus{
 
       <div class="trust-item">
         <h3>3 min</h3>
-        <p>De Jemaa el-Fna</p>
+        <p data-i18n="trust1_p">De Jemaa el-Fna</p>
       </div>
 
       <div class="trust-item">
         <h3>4,55★</h3>
-        <p>Note moyenne</p>
+        <p data-i18n="trust2_p">Note moyenne</p>
       </div>
 
       <div class="trust-item">
         <h3>189</h3>
-        <p>Avis</p>
+        <p data-i18n="trust3_p">Avis</p>
       </div>
 
       <div class="trust-item">
         <h3>24/24</h3>
-        <p>Assistance</p>
+        <p data-i18n="trust4_p">Assistance</p>
       </div>
 
     </div>
@@ -1305,84 +631,60 @@ input:focus{
 </main>
 
 <footer>
-  <div class="container">
+  <div class="container" data-i18n="footer_text">
     Dar Koutoubia · Médina de Marrakech · Réservation directe
   </div>
 </footer>
 
-<!-- DESKTOP WHATSAPP -->
-<a
-  class="whatsapp"
-  href="https://wa.me/212619420460?text=Bonjour%2C%20j%27aimerais%20avoir%20des%20informations%20sur%20vos%20appartements%20%C3%A0%20Marrakech."
-  target="_blank"
-  aria-label="Contacter Dar Koutoubia sur WhatsApp"
->
+<a class="whatsapp" id="floatWhatsapp" href="#" target="_blank" aria-label="Contacter Dar Koutoubia sur WhatsApp">
   💬
 </a>
 
-<!-- MOBILE BOTTOM BAR -->
 <div class="mobile-bar">
-  <a href="#apartments" class="mobile-book">
-    🏠 Réserver
-  </a>
-
-  <a
-    href="https://wa.me/212619420460?text=Bonjour%2C%20j%27aimerais%20avoir%20des%20informations%20sur%20vos%20appartements%20%C3%A0%20Marrakech."
-    target="_blank"
-    class="mobile-whatsapp"
-  >
-    💬 WhatsApp
-  </a>
+  <a href="#apartments" class="mobile-book" data-i18n="mobile_book">🏠 Réserver</a>
+  <a href="#" id="mobileWhatsapp" target="_blank" class="mobile-whatsapp">💬 WhatsApp</a>
 </div>
 
-<!-- RESERVATION MODAL -->
 <div class="modal-bg" id="modalBg">
 
   <div class="modal">
 
-    <button class="close" id="closeModal" aria-label="Fermer">
-      ×
-    </button>
+    <button class="close" id="closeModal" aria-label="Fermer">×</button>
 
-    <h2 id="modalApartment">
-      Demande de réservation
-    </h2>
+    <h2 id="modalApartment" data-i18n="modal_default_title">Demande de réservation</h2>
 
-    <p class="modal-note">
+    <p class="modal-note" data-i18n="modal_note">
       Indiquez vos dates et vos coordonnées.
       Nous vous confirmerons la disponibilité et le prix sur WhatsApp.
     </p>
 
     <div class="field-row">
-
       <div class="field">
-        <label for="checkin">Arrivée</label>
+        <label for="checkin" data-i18n="label_checkin">Arrivée</label>
         <input type="date" id="checkin">
       </div>
-
       <div class="field">
-        <label for="checkout">Départ</label>
+        <label for="checkout" data-i18n="label_checkout">Départ</label>
         <input type="date" id="checkout">
       </div>
-
     </div>
 
     <div class="field">
-      <label for="guests">Voyageurs</label>
+      <label for="guests" data-i18n="label_guests">Voyageurs</label>
       <input type="number" id="guests" min="1" value="2">
     </div>
 
     <div class="field">
-      <label for="name">Nom</label>
-      <input type="text" id="name" placeholder="Prénom Nom">
+      <label for="name" data-i18n="label_name">Nom</label>
+      <input type="text" id="name" data-i18n-placeholder="placeholder_name" placeholder="Prénom Nom">
     </div>
 
     <div class="field">
-      <label for="phone">Téléphone / WhatsApp</label>
+      <label for="phone" data-i18n="label_phone">Téléphone / WhatsApp</label>
       <input type="tel" id="phone" placeholder="+33 6...">
     </div>
 
-    <button class="reserve" id="sendReservation">
+    <button class="reserve" id="sendReservation" data-i18n="modal_send">
       Envoyer la demande sur WhatsApp
     </button>
 
@@ -1391,102 +693,333 @@ input:focus{
 
 <script>
 const WHATSAPP_NUMBER = "212619420460";
+let currentLang = "fr";
 
-const apartments = [
-  {
-    name:"Dar Koutoubia — Appartement en résidence",
-    rating:"4,53",
-    reviews:77,
-    price:"À partir de 65€ / nuit",
-    img:"https://a0.muscache.com/im/pictures/hosting/Hosting-53142503/original/90f0fc53-1442-43f2-8ebb-850f6d90a688.jpeg?im_w=720",
-    specs:["6 voyageurs","2 chambres","6 lits","1 SdB"],
-    amenities:["✓ Vue panoramique","✓ Cuisine équipée","✓ Wifi","✓ Parking"]
+const translations = {
+  fr: {
+    nav_cta:"Voir les logements",
+    hero_eyebrow:"Médina de Marrakech · à 3 min de Jemaa el-Fna",
+    hero_h1_pre:"Votre séjour au",
+    hero_h1_span:"cœur de Marrakech.",
+    hero_copy:"Quatre logements au cœur de la médina, proches de la Koutoubia et de Jemaa el-Fna. Réservez directement auprès de nous, avec une communication rapide sur WhatsApp.",
+    badge_reviews:"189 avis",
+    badge_distance:"📍 3 min Jemaa el-Fna",
+    btn_primary:"Vérifier les disponibilités",
+    btn_secondary:"💬 Contacter sur WhatsApp",
+    hero_card_sub:"Terrasse panoramique · Vue Atlas · Médina",
+    features_eyebrow:"Pourquoi nous choisir",
+    features_title:"Réserver directement, simplement.",
+    features_sub:"Un contact direct avec votre hôte et une expérience pensée pour votre séjour à Marrakech.",
+    feature1_title:"Tarif direct", feature1_p:"Aucun frais de plateforme ajouté à votre réservation.",
+    feature2_title:"Réponse rapide", feature2_p:"Échangez directement avec nous via WhatsApp.",
+    feature3_title:"Assistance", feature3_p:"Nous restons disponibles pendant votre séjour.",
+    feature4_title:"Hôte local", feature4_p:"Profitez de conseils pour découvrir Marrakech.",
+    gallery_eyebrow:"Destination",
+    gallery_title:"Marrakech vous attend.",
+    gallery_sub:"Profitez de la médina, des souks, de la Koutoubia et de l'ambiance unique de Marrakech.",
+    gallery_cap1:"Jemaa el-Fna, de nuit",
+    gallery_cap3:"L'ambiance des souks",
+    apartments_eyebrow:"Nos logements",
+    apartments_title:"Choisissez votre séjour.",
+    apartments_sub:"Des logements adaptés aux couples, familles et groupes.",
+    location_eyebrow:"Emplacement",
+    location_title:"Au cœur de la médina.",
+    location_sub:"Un emplacement pratique pour découvrir Marrakech à pied et profiter de ses principaux sites.",
+    loc_nearby:"À proximité", loc_souks:"Souks", loc_walk:"À pied", loc_medina:"Médina", loc_central:"Emplacement central",
+    map_label:"📍 Médina de Marrakech",
+    map_button:"📍 Voir l'emplacement exact sur Google Maps →",
+    trust1_p:"De Jemaa el-Fna", trust2_p:"Note moyenne", trust3_p:"Avis", trust4_p:"Assistance",
+    footer_text:"Dar Koutoubia · Médina de Marrakech · Réservation directe",
+    mobile_book:"🏠 Réserver",
+    modal_default_title:"Demande de réservation",
+    modal_note:"Indiquez vos dates et vos coordonnées. Nous vous confirmerons la disponibilité et le prix sur WhatsApp.",
+    label_checkin:"Arrivée", label_checkout:"Départ", label_guests:"Voyageurs",
+    label_name:"Nom", label_phone:"Téléphone / WhatsApp",
+    placeholder_name:"Prénom Nom",
+    modal_send:"Envoyer la demande sur WhatsApp",
+    reserve_btn:"Réserver ce logement →",
+    price_prefix:"À partir de", price_suffix:"€ / nuit",
+    alert_fields:"Veuillez remplir tous les champs.",
+    alert_dates:"La date de départ doit être après la date d'arrivée.",
+    wa_greeting:"Bonjour", wa_wish:"Je souhaite réserver :",
+    wa_checkin:"Arrivée", wa_checkout:"Départ", wa_guests:"Voyageurs",
+    wa_name:"Nom", wa_phone:"Téléphone",
+    wa_question:"Pouvez-vous me confirmer la disponibilité et le prix total ?",
+    wa_hero:"Bonjour, j'aimerais avoir des informations sur vos appartements à Marrakech."
   },
-  {
-    name:"Appartement vue la Koutoubia",
-    rating:"4,57",
-    reviews:37,
-    price:"À partir de 70€ / nuit",
-    img:"https://a0.muscache.com/im/pictures/hosting/Hosting-53142881/original/df0d9a87-1c70-4ef8-83c0-864e8c271a2d.jpeg?im_w=720",
-    specs:["6 voyageurs","2 chambres","5 lits","1 SdB"],
-    amenities:["✓ Vue montagne","✓ Cuisine équipée","✓ Wifi","✓ Parking"]
+  en: {
+    nav_cta:"View apartments",
+    hero_eyebrow:"Marrakech Medina · 3 min from Jemaa el-Fna",
+    hero_h1_pre:"Your stay in the",
+    hero_h1_span:"heart of Marrakech.",
+    hero_copy:"Four apartments in the heart of the medina, close to the Koutoubia and Jemaa el-Fna. Book directly with us, with fast communication on WhatsApp.",
+    badge_reviews:"189 reviews",
+    badge_distance:"📍 3 min from Jemaa el-Fna",
+    btn_primary:"Check availability",
+    btn_secondary:"💬 Contact on WhatsApp",
+    hero_card_sub:"Panoramic terrace · Atlas view · Medina",
+    features_eyebrow:"Why choose us",
+    features_title:"Book directly, simply.",
+    features_sub:"Direct contact with your host and an experience designed for your stay in Marrakech.",
+    feature1_title:"Direct rate", feature1_p:"No platform fees added to your booking.",
+    feature2_title:"Fast response", feature2_p:"Chat directly with us on WhatsApp.",
+    feature3_title:"Support", feature3_p:"We stay available throughout your stay.",
+    feature4_title:"Local host", feature4_p:"Get local tips to discover Marrakech.",
+    gallery_eyebrow:"Destination",
+    gallery_title:"Marrakech awaits you.",
+    gallery_sub:"Enjoy the medina, the souks, the Koutoubia and Marrakech's unique atmosphere.",
+    gallery_cap1:"Jemaa el-Fna, by night",
+    gallery_cap3:"The souks' atmosphere",
+    apartments_eyebrow:"Our apartments",
+    apartments_title:"Choose your stay.",
+    apartments_sub:"Apartments suited to couples, families and groups.",
+    location_eyebrow:"Location",
+    location_title:"In the heart of the medina.",
+    location_sub:"A convenient location to explore Marrakech on foot and enjoy its main sights.",
+    loc_nearby:"Nearby", loc_souks:"Souks", loc_walk:"On foot", loc_medina:"Medina", loc_central:"Central location",
+    map_label:"📍 Marrakech Medina",
+    map_button:"📍 See the exact location on Google Maps →",
+    trust1_p:"From Jemaa el-Fna", trust2_p:"Average rating", trust3_p:"Reviews", trust4_p:"Support",
+    footer_text:"Dar Koutoubia · Marrakech Medina · Direct booking",
+    mobile_book:"🏠 Book",
+    modal_default_title:"Booking request",
+    modal_note:"Enter your dates and contact details. We'll confirm availability and price on WhatsApp.",
+    label_checkin:"Check-in", label_checkout:"Check-out", label_guests:"Guests",
+    label_name:"Name", label_phone:"Phone / WhatsApp",
+    placeholder_name:"First Last",
+    modal_send:"Send request on WhatsApp",
+    reserve_btn:"Book this apartment →",
+    price_prefix:"From", price_suffix:"€ / night",
+    alert_fields:"Please fill in all fields.",
+    alert_dates:"Check-out date must be after check-in date.",
+    wa_greeting:"Hello", wa_wish:"I would like to book:",
+    wa_checkin:"Check-in", wa_checkout:"Check-out", wa_guests:"Guests",
+    wa_name:"Name", wa_phone:"Phone",
+    wa_question:"Could you confirm availability and the total price?",
+    wa_hero:"Hello, I'd like some information about your apartments in Marrakech."
   },
-  {
-    name:"Superbe studio médina vue Koutoubia",
-    rating:"4,52",
-    reviews:44,
-    price:"À partir de 55€ / nuit",
-    img:"https://a0.muscache.com/im/pictures/hosting/Hosting-53159797/original/ae780b5c-94c6-426d-91e5-0d41633a8204.jpeg?im_w=720",
-    specs:["3 voyageurs","1 chambre","2 lits","1 SdB"],
-    amenities:["✓ Vue ville","✓ Cuisine","✓ Wifi","✓ Climatisation"]
+  es: {
+    nav_cta:"Ver los alojamientos",
+    hero_eyebrow:"Medina de Marrakech · a 3 min de Jemaa el-Fna",
+    hero_h1_pre:"Su estancia en el",
+    hero_h1_span:"corazón de Marrakech.",
+    hero_copy:"Cuatro alojamientos en el corazón de la medina, cerca de la Koutoubia y de Jemaa el-Fna. Reserve directamente con nosotros, con comunicación rápida por WhatsApp.",
+    badge_reviews:"189 opiniones",
+    badge_distance:"📍 3 min de Jemaa el-Fna",
+    btn_primary:"Ver disponibilidad",
+    btn_secondary:"💬 Contactar por WhatsApp",
+    hero_card_sub:"Terraza panorámica · Vista al Atlas · Medina",
+    features_eyebrow:"Por qué elegirnos",
+    features_title:"Reserve directo, de forma sencilla.",
+    features_sub:"Contacto directo con su anfitrión y una experiencia pensada para su estancia en Marrakech.",
+    feature1_title:"Tarifa directa", feature1_p:"Sin comisiones de plataforma añadidas a su reserva.",
+    feature2_title:"Respuesta rápida", feature2_p:"Hable directamente con nosotros por WhatsApp.",
+    feature3_title:"Asistencia", feature3_p:"Seguimos disponibles durante toda su estancia.",
+    feature4_title:"Anfitrión local", feature4_p:"Disfrute de consejos para descubrir Marrakech.",
+    gallery_eyebrow:"Destino",
+    gallery_title:"Marrakech le espera.",
+    gallery_sub:"Disfrute de la medina, los zocos, la Koutoubia y el ambiente único de Marrakech.",
+    gallery_cap1:"Jemaa el-Fna, de noche",
+    gallery_cap3:"El ambiente de los zocos",
+    apartments_eyebrow:"Nuestros alojamientos",
+    apartments_title:"Elija su estancia.",
+    apartments_sub:"Alojamientos adaptados a parejas, familias y grupos.",
+    location_eyebrow:"Ubicación",
+    location_title:"En el corazón de la medina.",
+    location_sub:"Una ubicación práctica para descubrir Marrakech a pie y disfrutar de sus principales lugares.",
+    loc_nearby:"Cerca", loc_souks:"Zocos", loc_walk:"A pie", loc_medina:"Medina", loc_central:"Ubicación central",
+    map_label:"📍 Medina de Marrakech",
+    map_button:"📍 Ver la ubicación exacta en Google Maps →",
+    trust1_p:"De Jemaa el-Fna", trust2_p:"Valoración media", trust3_p:"Opiniones", trust4_p:"Asistencia",
+    footer_text:"Dar Koutoubia · Medina de Marrakech · Reserva directa",
+    mobile_book:"🏠 Reservar",
+    modal_default_title:"Solicitud de reserva",
+    modal_note:"Indique sus fechas y datos de contacto. Le confirmaremos la disponibilidad y el precio por WhatsApp.",
+    label_checkin:"Llegada", label_checkout:"Salida", label_guests:"Viajeros",
+    label_name:"Nombre", label_phone:"Teléfono / WhatsApp",
+    placeholder_name:"Nombre Apellido",
+    modal_send:"Enviar solicitud por WhatsApp",
+    reserve_btn:"Reservar este alojamiento →",
+    price_prefix:"Desde", price_suffix:"€ / noche",
+    alert_fields:"Por favor, complete todos los campos.",
+    alert_dates:"La fecha de salida debe ser posterior a la de llegada.",
+    wa_greeting:"Hola", wa_wish:"Quisiera reservar:",
+    wa_checkin:"Llegada", wa_checkout:"Salida", wa_guests:"Viajeros",
+    wa_name:"Nombre", wa_phone:"Teléfono",
+    wa_question:"¿Podría confirmarme la disponibilidad y el precio total?",
+    wa_hero:"Hola, me gustaría información sobre sus apartamentos en Marrakech."
   },
-  {
-    name:"La maison Koutoubia — jusqu'à 15 pers.",
-    rating:"4,61",
-    reviews:31,
-    price:"À partir de 220€ / nuit",
-    img:"https://a0.muscache.com/im/pictures/hosting/Hosting-874368130554162031/original/d3b71e0f-ce5d-4c86-afa6-6aa09193fdc5.jpeg?im_w=720",
-    specs:["15 voyageurs","5 chambres","29 lits","5 SdB"],
-    amenities:["✓ Vue Atlas","✓ Cuisine","✓ Wifi","✓ Idéal groupes"]
+  de: {
+    nav_cta:"Unterkünfte ansehen",
+    hero_eyebrow:"Medina von Marrakesch · 3 Min. von Jemaa el-Fna",
+    hero_h1_pre:"Ihr Aufenthalt im",
+    hero_h1_span:"Herzen von Marrakesch.",
+    hero_copy:"Vier Wohnungen im Herzen der Medina, nahe der Koutoubia und Jemaa el-Fna. Buchen Sie direkt bei uns, mit schneller Kommunikation über WhatsApp.",
+    badge_reviews:"189 Bewertungen",
+    badge_distance:"📍 3 Min. von Jemaa el-Fna",
+    btn_primary:"Verfügbarkeit prüfen",
+    btn_secondary:"💬 Über WhatsApp kontaktieren",
+    hero_card_sub:"Panoramaterrasse · Atlasblick · Medina",
+    features_eyebrow:"Warum uns wählen",
+    features_title:"Direkt buchen, ganz einfach.",
+    features_sub:"Direkter Kontakt zu Ihrem Gastgeber und ein auf Ihren Aufenthalt in Marrakesch zugeschnittenes Erlebnis.",
+    feature1_title:"Direktpreis", feature1_p:"Keine Plattformgebühren auf Ihre Buchung.",
+    feature2_title:"Schnelle Antwort", feature2_p:"Sprechen Sie direkt mit uns über WhatsApp.",
+    feature3_title:"Unterstützung", feature3_p:"Wir sind während Ihres Aufenthalts erreichbar.",
+    feature4_title:"Lokaler Gastgeber", feature4_p:"Profitieren Sie von Tipps, um Marrakesch zu entdecken.",
+    gallery_eyebrow:"Reiseziel",
+    gallery_title:"Marrakesch erwartet Sie.",
+    gallery_sub:"Genießen Sie die Medina, die Souks, die Koutoubia und die einzigartige Atmosphäre von Marrakesch.",
+    gallery_cap1:"Jemaa el-Fna bei Nacht",
+    gallery_cap3:"Die Atmosphäre der Souks",
+    apartments_eyebrow:"Unsere Unterkünfte",
+    apartments_title:"Wählen Sie Ihren Aufenthalt.",
+    apartments_sub:"Unterkünfte für Paare, Familien und Gruppen.",
+    location_eyebrow:"Lage",
+    location_title:"Im Herzen der Medina.",
+    location_sub:"Eine praktische Lage, um Marrakesch zu Fuß zu entdecken und die wichtigsten Sehenswürdigkeiten zu genießen.",
+    loc_nearby:"In der Nähe", loc_souks:"Souks", loc_walk:"Zu Fuß", loc_medina:"Medina", loc_central:"Zentrale Lage",
+    map_label:"📍 Medina von Marrakesch",
+    map_button:"📍 Genauen Standort auf Google Maps ansehen →",
+    trust1_p:"Von Jemaa el-Fna", trust2_p:"Durchschnittsbewertung", trust3_p:"Bewertungen", trust4_p:"Unterstützung",
+    footer_text:"Dar Koutoubia · Medina von Marrakesch · Direktbuchung",
+    mobile_book:"🏠 Buchen",
+    modal_default_title:"Buchungsanfrage",
+    modal_note:"Geben Sie Ihre Reisedaten und Kontaktinformationen ein. Wir bestätigen Verfügbarkeit und Preis über WhatsApp.",
+    label_checkin:"Anreise", label_checkout:"Abreise", label_guests:"Reisende",
+    label_name:"Name", label_phone:"Telefon / WhatsApp",
+    placeholder_name:"Vorname Nachname",
+    modal_send:"Anfrage über WhatsApp senden",
+    reserve_btn:"Diese Unterkunft buchen →",
+    price_prefix:"Ab", price_suffix:"€ / Nacht",
+    alert_fields:"Bitte füllen Sie alle Felder aus.",
+    alert_dates:"Das Abreisedatum muss nach dem Anreisedatum liegen.",
+    wa_greeting:"Hallo", wa_wish:"Ich möchte Folgendes buchen:",
+    wa_checkin:"Anreise", wa_checkout:"Abreise", wa_guests:"Reisende",
+    wa_name:"Name", wa_phone:"Telefon",
+    wa_question:"Können Sie mir Verfügbarkeit und Gesamtpreis bestätigen?",
+    wa_hero:"Hallo, ich hätte gerne Informationen zu Ihren Wohnungen in Marrakesch."
   }
-];
+};
+
+const apartmentsData = {
+  fr: [
+    { name:"Dar Koutoubia — Appartement en résidence", rating:"4,53", reviews:77, priceValue:65,
+      img:"https://a0.muscache.com/im/pictures/hosting/Hosting-53142503/original/90f0fc53-1442-43f2-8ebb-850f6d90a688.jpeg?im_w=720",
+      specs:["6 voyageurs","2 chambres","6 lits","1 SdB"],
+      amenities:["✓ Vue panoramique","✓ Cuisine équipée","✓ Wifi","✓ Parking"] },
+    { name:"Appartement vue la Koutoubia", rating:"4,57", reviews:37, priceValue:70,
+      img:"https://a0.muscache.com/im/pictures/hosting/Hosting-53142881/original/df0d9a87-1c70-4ef8-83c0-864e8c271a2d.jpeg?im_w=720",
+      specs:["6 voyageurs","2 chambres","5 lits","1 SdB"],
+      amenities:["✓ Vue montagne","✓ Cuisine équipée","✓ Wifi","✓ Parking"] },
+    { name:"Superbe studio médina vue Koutoubia", rating:"4,52", reviews:44, priceValue:55,
+      img:"https://a0.muscache.com/im/pictures/hosting/Hosting-53159797/original/ae780b5c-94c6-426d-91e5-0d41633a8204.jpeg?im_w=720",
+      specs:["3 voyageurs","1 chambre","2 lits","1 SdB"],
+      amenities:["✓ Vue ville","✓ Cuisine","✓ Wifi","✓ Climatisation"] },
+    { name:"La maison Koutoubia — jusqu'à 15 pers.", rating:"4,61", reviews:31, priceValue:220,
+      img:"https://a0.muscache.com/im/pictures/hosting/Hosting-874368130554162031/original/d3b71e0f-ce5d-4c86-afa6-6aa09193fdc5.jpeg?im_w=720",
+      specs:["15 voyageurs","5 chambres","29 lits","5 SdB"],
+      amenities:["✓ Vue Atlas","✓ Cuisine","✓ Wifi","✓ Idéal groupes"] }
+  ],
+  en: [
+    { name:"Dar Koutoubia — Residence apartment", rating:"4.53", reviews:77, priceValue:65,
+      img:"https://a0.muscache.com/im/pictures/hosting/Hosting-53142503/original/90f0fc53-1442-43f2-8ebb-850f6d90a688.jpeg?im_w=720",
+      specs:["6 guests","2 bedrooms","6 beds","1 bathroom"],
+      amenities:["✓ Panoramic view","✓ Equipped kitchen","✓ Wifi","✓ Parking"] },
+    { name:"Apartment with Koutoubia view", rating:"4.57", reviews:37, priceValue:70,
+      img:"https://a0.muscache.com/im/pictures/hosting/Hosting-53142881/original/df0d9a87-1c70-4ef8-83c0-864e8c271a2d.jpeg?im_w=720",
+      specs:["6 guests","2 bedrooms","5 beds","1 bathroom"],
+      amenities:["✓ Mountain view","✓ Equipped kitchen","✓ Wifi","✓ Parking"] },
+    { name:"Beautiful medina studio, Koutoubia view", rating:"4.52", reviews:44, priceValue:55,
+      img:"https://a0.muscache.com/im/pictures/hosting/Hosting-53159797/original/ae780b5c-94c6-426d-91e5-0d41633a8204.jpeg?im_w=720",
+      specs:["3 guests","1 bedroom","2 beds","1 bathroom"],
+      amenities:["✓ City view","✓ Kitchen","✓ Wifi","✓ Air conditioning"] },
+    { name:"La Maison Koutoubia — up to 15 guests", rating:"4.61", reviews:31, priceValue:220,
+      img:"https://a0.muscache.com/im/pictures/hosting/Hosting-874368130554162031/original/d3b71e0f-ce5d-4c86-afa6-6aa09193fdc5.jpeg?im_w=720",
+      specs:["15 guests","5 bedrooms","29 beds","5 bathrooms"],
+      amenities:["✓ Atlas view","✓ Kitchen","✓ Wifi","✓ Great for groups"] }
+  ],
+  es: [
+    { name:"Dar Koutoubia — Apartamento en residencia", rating:"4,53", reviews:77, priceValue:65,
+      img:"https://a0.muscache.com/im/pictures/hosting/Hosting-53142503/original/90f0fc53-1442-43f2-8ebb-850f6d90a688.jpeg?im_w=720",
+      specs:["6 viajeros","2 habitaciones","6 camas","1 baño"],
+      amenities:["✓ Vista panorámica","✓ Cocina equipada","✓ Wifi","✓ Aparcamiento"] },
+    { name:"Apartamento con vista a la Koutoubia", rating:"4,57", reviews:37, priceValue:70,
+      img:"https://a0.muscache.com/im/pictures/hosting/Hosting-53142881/original/df0d9a87-1c70-4ef8-83c0-864e8c271a2d.jpeg?im_w=720",
+      specs:["6 viajeros","2 habitaciones","5 camas","1 baño"],
+      amenities:["✓ Vista a la montaña","✓ Cocina equipada","✓ Wifi","✓ Aparcamiento"] },
+    { name:"Precioso estudio en la medina, vista Koutoubia", rating:"4,52", reviews:44, priceValue:55,
+      img:"https://a0.muscache.com/im/pictures/hosting/Hosting-53159797/original/ae780b5c-94c6-426d-91e5-0d41633a8204.jpeg?im_w=720",
+      specs:["3 viajeros","1 habitación","2 camas","1 baño"],
+      amenities:["✓ Vista a la ciudad","✓ Cocina","✓ Wifi","✓ Aire acondicionado"] },
+    { name:"La Maison Koutoubia — hasta 15 personas", rating:"4,61", reviews:31, priceValue:220,
+      img:"https://a0.muscache.com/im/pictures/hosting/Hosting-874368130554162031/original/d3b71e0f-ce5d-4c86-afa6-6aa09193fdc5.jpeg?im_w=720",
+      specs:["15 viajeros","5 habitaciones","29 camas","5 baños"],
+      amenities:["✓ Vista al Atlas","✓ Cocina","✓ Wifi","✓ Ideal para grupos"] }
+  ],
+  de: [
+    { name:"Dar Koutoubia — Wohnung in Residenz", rating:"4,53", reviews:77, priceValue:65,
+      img:"https://a0.muscache.com/im/pictures/hosting/Hosting-53142503/original/90f0fc53-1442-43f2-8ebb-850f6d90a688.jpeg?im_w=720",
+      specs:["6 Gäste","2 Schlafzimmer","6 Betten","1 Bad"],
+      amenities:["✓ Panoramablick","✓ Ausgestattete Küche","✓ Wifi","✓ Parkplatz"] },
+    { name:"Wohnung mit Koutoubia-Blick", rating:"4,57", reviews:37, priceValue:70,
+      img:"https://a0.muscache.com/im/pictures/hosting/Hosting-53142881/original/df0d9a87-1c70-4ef8-83c0-864e8c271a2d.jpeg?im_w=720",
+      specs:["6 Gäste","2 Schlafzimmer","5 Betten","1 Bad"],
+      amenities:["✓ Bergblick","✓ Ausgestattete Küche","✓ Wifi","✓ Parkplatz"] },
+    { name:"Schönes Medina-Studio, Koutoubia-Blick", rating:"4,52", reviews:44, priceValue:55,
+      img:"https://a0.muscache.com/im/pictures/hosting/Hosting-53159797/original/ae780b5c-94c6-426d-91e5-0d41633a8204.jpeg?im_w=720",
+      specs:["3 Gäste","1 Schlafzimmer","2 Betten","1 Bad"],
+      amenities:["✓ Stadtblick","✓ Küche","✓ Wifi","✓ Klimaanlage"] },
+    { name:"La Maison Koutoubia — bis zu 15 Personen", rating:"4,61", reviews:31, priceValue:220,
+      img:"https://a0.muscache.com/im/pictures/hosting/Hosting-874368130554162031/original/d3b71e0f-ce5d-4c86-afa6-6aa09193fdc5.jpeg?im_w=720",
+      specs:["15 Gäste","5 Schlafzimmer","29 Betten","5 Bäder"],
+      amenities:["✓ Atlasblick","✓ Küche","✓ Wifi","✓ Ideal für Gruppen"] }
+  ]
+};
 
 const cards = document.getElementById("cards");
 const modalBg = document.getElementById("modalBg");
 const modalApartment = document.getElementById("modalApartment");
 let currentApartment = null;
+let currentApartmentIndex = null;
 
-apartments.forEach((apt,index)=>{
-  const card = document.createElement("article");
-  card.className = "card";
+function heroWaLink(){
+  const t = translations[currentLang];
+  return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(t.wa_hero)}`;
+}
 
-  card.innerHTML = `
-    <div class="card-image-wrap">
-      <img
-        class="card-image"
-        src="${apt.img}"
-        alt="${apt.name}"
-        loading="${index === 0 ? "eager" : "lazy"}"
-        width="720"
-        height="480"
-      >
-      <div class="rating">★ ${apt.rating} · ${apt.reviews} avis</div>
-    </div>
-
-    <div class="card-content">
-
-      <h3 class="card-title">${apt.name}</h3>
-
-      <div class="price">${apt.price}</div>
-
-      <div class="specs">
-        ${apt.specs.map(s => `<span class="spec">${s}</span>`).join("")}
+function renderCards(){
+  const t = translations[currentLang];
+  const list = apartmentsData[currentLang];
+  cards.innerHTML = "";
+  list.forEach((apt,index)=>{
+    const card = document.createElement("article");
+    card.className = "card";
+    card.innerHTML = `
+      <div class="card-image-wrap">
+        <img class="card-image" src="${apt.img}"
+          onerror="this.onerror=null;this.removeAttribute('src');"
+          alt="${apt.name}" loading="${index===0?"eager":"lazy"}" width="720" height="480">
+        <div class="rating">★ ${apt.rating} · ${apt.reviews} ${currentLang==="fr"?"avis":currentLang==="en"?"reviews":currentLang==="es"?"opiniones":"Bewertungen"}</div>
       </div>
-
-      <div class="amenities">
-        ${apt.amenities.map(a => `<span class="amenity">${a}</span>`).join("")}
+      <div class="card-content">
+        <h3 class="card-title">${apt.name}</h3>
+        <div class="price">${t.price_prefix} ${apt.priceValue}${t.price_suffix}</div>
+        <div class="specs">${apt.specs.map(s=>`<span class="spec">${s}</span>`).join("")}</div>
+        <div class="amenities">${apt.amenities.map(a=>`<span class="amenity">${a}</span>`).join("")}</div>
+        <button class="reserve" type="button" data-index="${index}">${t.reserve_btn}</button>
       </div>
-
-      <button
-        class="reserve"
-        type="button"
-        data-index="${index}"
-      >
-        Réserver ce logement →
-      </button>
-
-    </div>
-  `;
-
-  cards.appendChild(card);
-});
+    `;
+    cards.appendChild(card);
+  });
+}
 
 cards.addEventListener("click",(event)=>{
   const button = event.target.closest(".reserve");
   if(!button) return;
-
   const index = Number(button.dataset.index);
-  openModal(apartments[index]);
+  currentApartmentIndex = index;
+  openModal(apartmentsData[currentLang][index]);
 });
 
 function openModal(apt){
@@ -1502,62 +1035,79 @@ function closeModal(){
 }
 
 document.getElementById("closeModal").addEventListener("click",closeModal);
-
-modalBg.addEventListener("click",(event)=>{
-  if(event.target === modalBg) closeModal();
-});
-
-document.addEventListener("keydown",(event)=>{
-  if(event.key === "Escape") closeModal();
-});
+modalBg.addEventListener("click",(event)=>{ if(event.target===modalBg) closeModal(); });
+document.addEventListener("keydown",(event)=>{ if(event.key==="Escape") closeModal(); });
 
 document.getElementById("sendReservation").addEventListener("click",()=>{
+  const t = translations[currentLang];
   const checkin = document.getElementById("checkin").value;
   const checkout = document.getElementById("checkout").value;
   const guests = document.getElementById("guests").value;
   const name = document.getElementById("name").value.trim();
   const phone = document.getElementById("phone").value.trim();
 
-  if(!checkin || !checkout || !name || !phone){
-    alert("Veuillez remplir tous les champs.");
-    return;
-  }
-
-  if(checkout <= checkin){
-    alert("La date de départ doit être après la date d'arrivée.");
-    return;
-  }
+  if(!checkin || !checkout || !name || !phone){ alert(t.alert_fields); return; }
+  if(checkout <= checkin){ alert(t.alert_dates); return; }
 
   const message =
-`Bonjour 👋
+`${t.wa_greeting} 👋
 
-Je souhaite réserver :
+${t.wa_wish}
 
 🏠 ${currentApartment.name}
 
-📅 Arrivée : ${checkin}
-📅 Départ : ${checkout}
-👥 Voyageurs : ${guests}
+📅 ${t.wa_checkin} : ${checkin}
+📅 ${t.wa_checkout} : ${checkout}
+👥 ${t.wa_guests} : ${guests}
 
-👤 Nom : ${name}
-📱 Téléphone : ${phone}
+👤 ${t.wa_name} : ${name}
+📱 ${t.wa_phone} : ${phone}
 
-Pouvez-vous me confirmer la disponibilité et le prix total ?`;
+${t.wa_question}`;
 
-  const url =
-    `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
-
+  const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
   window.open(url,"_blank");
   closeModal();
 });
 
+function setLanguage(lang){
+  currentLang = translations[lang] ? lang : "fr";
+  const t = translations[currentLang];
+
+  document.documentElement.lang = currentLang;
+  document.getElementById("langSelect").value = currentLang;
+
+  document.querySelectorAll("[data-i18n]").forEach(el=>{
+    const key = el.getAttribute("data-i18n");
+    if(t[key] !== undefined) el.textContent = t[key];
+  });
+  document.querySelectorAll("[data-i18n-placeholder]").forEach(el=>{
+    const key = el.getAttribute("data-i18n-placeholder");
+    if(t[key] !== undefined) el.setAttribute("placeholder", t[key]);
+  });
+
+  const waUrl = heroWaLink();
+  document.getElementById("heroWhatsapp").href = waUrl;
+  document.getElementById("floatWhatsapp").href = waUrl;
+  document.getElementById("mobileWhatsapp").href = waUrl;
+
+  renderCards();
+
+  if(currentApartmentIndex !== null){
+    modalApartment.textContent = apartmentsData[currentLang][currentApartmentIndex].name;
+  } else {
+    modalApartment.textContent = t.modal_default_title;
+  }
+}
+
 const today = new Date().toISOString().split("T")[0];
 document.getElementById("checkin").min = today;
 document.getElementById("checkout").min = today;
-
 document.getElementById("checkin").addEventListener("change",function(){
   document.getElementById("checkout").min = this.value || today;
 });
+
+setLanguage("fr");
 </script>
 
 </body>
